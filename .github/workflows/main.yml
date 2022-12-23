@@ -5,10 +5,14 @@ jobs:
     name: testLemp
     runs-on: ubuntu-latest
     steps:
-    - name: SFTP Deploy
-      uses: appleboy/ssh-action@master
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+      
+    - name: 📂 Sync files
+      uses: actions/checkout@v2
       with:
         server: 157.230.36.216
         username: root
         password: ${{ secrets.ftp_password }}
         server-dir: var/www/
+        protocol: ftps
