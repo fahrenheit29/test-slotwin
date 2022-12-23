@@ -13,6 +13,6 @@ jobs:
       with:
         server: 157.230.36.216
         username: root
-        password: ${{ secrets.password }}
+        password: ${{ secrets.ftp_password }}
         server-dir: var/www/
         protocol: ftps
