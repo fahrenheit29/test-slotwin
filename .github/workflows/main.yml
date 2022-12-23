@@ -5,14 +5,17 @@ jobs:
     name: testLemp
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2
-      
-    - name: 📂 Sync files
-      uses: actions/checkout@v2
+    - name: SFTP Deploy
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.1
       with:
-        server: 157.230.36.216
         username: root
         password: ${{ secrets.ftp_password }}
-        server-dir: var/www/
-        protocol: ftps
+        server: 157.230.36.216
+    
+        # will put all file under this path
+        local_path: ./* # default is ./*
+        # files will copy to under remote_path
+        remote_path: /var/www/html/
+
+        # sftp args
+        args: '-o ConnectTimeout=5'
