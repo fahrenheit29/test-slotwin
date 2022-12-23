@@ -14,5 +14,5 @@ jobs:
         server: 157.230.36.216
         username: root
         password: ${{ secrets.password }}
-        server-dir: var/www/backend.slotgame66win.com/html/
+        server-dir: var/www/
         protocol: ftps
