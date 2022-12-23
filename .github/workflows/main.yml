@@ -9,6 +9,6 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         server: 157.230.36.216
-        username: youruser
+        username: root
         password: ${{ secrets.ftp_password }}
         server-dir: var/www/
