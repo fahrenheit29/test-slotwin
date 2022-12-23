@@ -6,16 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: SFTP Deploy
-      uses: wlixcc/SFTP-Deploy-Action@v1.2.1
+      uses: actions/checkout@v2
       with:
-        server: 157.230.36.216
-        username: root
+        server: sftp.yourserver.com
+        username: youruser
         password: ${{ secrets.ftp_password }}
-    
-        # will put all file under this path
-        local_path: ./* # default is ./*
-        # files will copy to under remote_path
-        remote_path: /var/www/html/
-
-        # sftp args
-        args: '-o ConnectTimeout=5'
+        server-dir: public_html/www/mysubdirectory
