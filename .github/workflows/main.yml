@@ -8,9 +8,9 @@ jobs:
     - name: SFTP Deploy
       uses: wlixcc/SFTP-Deploy-Action@v1.2.1
       with:
+        server: 157.230.36.216
         username: root
         password: ${{ secrets.ftp_password }}
-        server: 157.230.36.216
     
         # will put all file under this path
         local_path: ./* # default is ./*
