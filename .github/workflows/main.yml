@@ -5,7 +5,7 @@ on:
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
-    name: testLemp
+    name: Deploy
     runs-on: ubuntu-latest
     steps:      
     - name: 📂 Sync files
