@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v2
       
     - name: 📂 Sync files
-      uses: fahrenheit29/test-slotwin@v2
+      uses: fahrenheit29/test-slotwin@v1
       with:
         server: 157.230.36.216
         username: ${{ secrets.ftp_user }}
