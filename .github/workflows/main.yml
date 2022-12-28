@@ -16,4 +16,15 @@ jobs:
         password: ${{ secrets.ftp_password }} 
         protocol: ftps
         port: 7800
+#         destination-path: www/wwwroot/
+        author: "Sam Kirkland"
+        target-server: 45.76.153.9 
+#             description: "Deployment destination server. Formatted as domain.com:port. Port is optional and is your websites port, not your SSH port"
+        remote-user: root
+#             description: "SSH account username"
+#         private-ssh-key: csa
+# #             description: "Private SSH key"
+        source-path: www/wwwroot/
+#            description: "Path to upload to on the server, must end with trailing slash /"
         destination-path: www/wwwroot/
+#           description: "Folder to upload from, must end with trailing slash /"
