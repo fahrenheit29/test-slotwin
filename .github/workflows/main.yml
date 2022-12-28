@@ -12,7 +12,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
         server: 45.76.153.9
-        port: 7800
+#         port: 7800
         username: ${{ secrets.ftp_user }} 
         password: ${{ secrets.ftp_password }} 
 #         server-dir: /www/wwwroot/default/
