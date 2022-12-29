@@ -1,18 +1,23 @@
-on: push
-name: 🚀 Deploy website on push
+name: Build & Deploy
+on:
+  push:
+    branches: [main]
+
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2
-
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
-      with:
-        server: 45.76.153.9
-#         port: 7800
-        username: ${{ secrets.ftp_user }} 
-        password: ${{ secrets.ftp_password }} 
-#         server-dir: /www/wwwroot/default/
+      - name: Deploy NodeJS app
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+          host: ${{secrets.SSH_HOST}} # IP address of the server you wish to ssh into
+          
+          key: ${{secrets.SSH_KEY}} # Private or public key of the server
+          
+          username: ${{ secrets.SSH_USERNAME }} # User of the server you want to ssh into
+          
+          script: |
+            mkdir test
+            cd test
+            git clone git@github.com:fahrenheit29/test-slotwin.git
+            echo ‘Deployment successful to digital ocean’
